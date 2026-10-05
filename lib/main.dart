@@ -38,30 +38,70 @@ class PerfilScreen extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(24, 32, 24, 24),
           child: Column(
             children: [
-              const CircleAvatar(
-                radius: 100,
-                backgroundImage: AssetImage('assets/images/perfil_alumno.png'),
-              ),
-              const SizedBox(height: 24),
-              const Text(
-                'Wilson Ossa',
-                style: TextStyle(
-                  color: Color(0xff171a2b),
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'Tecnología en Desarrollo de Software',
-                style: TextStyle(color: Color(0xff555861), fontSize: 22),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'Semestre 7',
-                style: TextStyle(color: Color(0xff555861), fontSize: 18),
+              LayoutBuilder(
+                builder: (context, constraints) {
+                  final isWide = constraints.maxWidth >= 700;
+                  final textAlign = isWide ? TextAlign.start : TextAlign.center;
+                  final details = Column(
+                    crossAxisAlignment: isWide
+                        ? CrossAxisAlignment.start
+                        : CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Wilson Ossa',
+                        style: const TextStyle(
+                          color: Color(0xff171a2b),
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: textAlign,
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Tecnología en Desarrollo de Software',
+                        style: const TextStyle(
+                          color: Color(0xff555861),
+                          fontSize: 22,
+                        ),
+                        textAlign: textAlign,
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Semestre 7',
+                        style: const TextStyle(
+                          color: Color(0xff555861),
+                          fontSize: 18,
+                        ),
+                        textAlign: textAlign,
+                      ),
+                    ],
+                  );
+                  const avatar = CircleAvatar(
+                    radius: 100,
+                    backgroundImage: AssetImage(
+                      'assets/images/perfil_alumno.png',
+                    ),
+                  );
+
+                  if (isWide) {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        avatar,
+                        const SizedBox(width: 32),
+                        Flexible(child: details),
+                      ],
+                    );
+                  }
+
+                  return Column(
+                    children: [
+                      avatar,
+                      const SizedBox(height: 24),
+                      details,
+                    ],
+                  );
+                },
               ),
               const SizedBox(height: 28),
               const Divider(color: Color(0xffd9dbe2)),
