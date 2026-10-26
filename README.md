@@ -196,3 +196,15 @@ Se utilizÃ³ ChatGPT como apoyo para comprender errores, revisar cÃ³digo, org
 Mi Taller es una aplicaciÃ³n desarrollada como ejercicio acadÃ©mico para aplicar conceptos de Dart y Flutter. Permite registrar Ã³rdenes de servicio, consultar su informaciÃ³n, actualizar los estados de las reparaciones y visualizar un resumen grÃ¡fico. AdemÃ¡s, incorpora almacenamiento local y pruebas automatizadas para comprobar funcionalidades bÃ¡sicas.
 
 Este proyecto representa una primera versiÃ³n de una herramienta de apoyo para pequeÃ±os talleres automotrices y una oportunidad para continuar fortaleciendo los conocimientos de desarrollo de aplicaciones mÃ³viles.
+
+## Capturas de pantalla
+
+### Pantalla principal
+![Pantalla principal de Mi Taller](screenshots/pantalla_principal.png)
+
+### Órdenes registradas
+![Órdenes registradas](screenshots/ordenes_registradas.png)
+
+### Gráfico de órdenes
+![Gráfico de órdenes](screenshots/grafico_ordenes.png)
+    
